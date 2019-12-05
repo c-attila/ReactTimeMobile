@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ReAct</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="game_button_string">Play</string>
+    <string name="results_button_string">Scores</string>
+    <string name="hit_button_string">Hit!</string>
+    <string name="game_button2_string">Play</string>
+    <string name="game_button1_description_string">Target</string>
+</resources>
