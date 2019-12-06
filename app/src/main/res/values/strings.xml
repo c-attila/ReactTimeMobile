@@ -8,4 +8,5 @@
     <string name="hit_button_string">Hit!</string>
     <string name="game_button2_string">Play</string>
     <string name="game_button1_description_string">Target</string>
+    <string name="results_button1_string">Back to menu</string>
 </resources>

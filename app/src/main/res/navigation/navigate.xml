@@ -26,5 +26,9 @@
         android:id="@+id/resultsFragment"
         android:name="com.cattila.react.fragments.ResultsFragment"
         android:label="fragment_results"
-        tools:layout="@layout/fragment_results"/>
+        tools:layout="@layout/fragment_results">
+        <action
+            android:id="@+id/action_resultsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
 </navigation>
