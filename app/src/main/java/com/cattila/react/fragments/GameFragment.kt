@@ -1,6 +1,7 @@
 package com.cattila.react.fragments
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,6 +35,8 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+//        var mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.sound_file)
+
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_game, container, false
         )
@@ -56,6 +59,8 @@ class GameFragment : Fragment() {
                 println(rand)
                 Thread.sleep(rand)
                 binding.gameButton1.visibility = View.VISIBLE
+//                mediaPlayer?.start()
+
                 elapsed = System.currentTimeMillis()
                 switch = false
             } else {
