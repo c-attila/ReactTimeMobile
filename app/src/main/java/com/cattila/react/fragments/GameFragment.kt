@@ -1,33 +1,19 @@
 package com.cattila.react.fragments
 
-import android.content.Context
-import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.view.isVisible
 import com.cattila.react.R
 import com.cattila.react.databinding.FragmentGameBinding
 import androidx.databinding.DataBindingUtil
 import androidx.room.Room
 import com.cattila.react.data.Result
-import com.cattila.react.data.ResultDAO
 import com.cattila.react.data.ResultDatabase
-import kotlinx.android.synthetic.main.fragment_game.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import org.threeten.bp.LocalDateTime
-import java.util.*
-import kotlin.concurrent.schedule
 import kotlin.random.Random
-import kotlin.random.nextInt
 
 class GameFragment : Fragment() {
 
@@ -62,7 +48,7 @@ class GameFragment : Fragment() {
             binding.gameButton2.text = "Clear"
             println(String.format("%s %d %d", arguments?.getString("name"),
                 System.currentTimeMillis() - elapsed, LocalDateTime.now().nano))
-            db.resultDAO().insert(
+            db.resultDao().insert(
                 Result(
                     arguments?.getString("name"),
                     System.currentTimeMillis() - elapsed, LocalDateTime.now()

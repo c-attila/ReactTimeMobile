@@ -10,7 +10,7 @@ import androidx.room.TypeConverters
 @TypeConverters(Converters::class)
 abstract class ResultDatabase : RoomDatabase() {
 
-    abstract fun resultDAO(): ResultDAO
+    abstract fun resultDao(): ResultDao
 
     companion object {
         private var instance: ResultDatabase? = null

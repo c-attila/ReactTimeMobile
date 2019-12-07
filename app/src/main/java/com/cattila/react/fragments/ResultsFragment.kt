@@ -1,7 +1,5 @@
 package com.cattila.react.fragments
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.cattila.react.R
-import com.cattila.react.data.ResultDAO
 import com.cattila.react.data.ResultDatabase
 import com.cattila.react.databinding.FragmentResultsBinding
 
@@ -38,7 +35,7 @@ class ResultsFragment : Fragment() {
             findNavController().navigate(ResultsFragmentDirections.actionResultsFragmentToMenuFragment())
         }
 
-        var results = db.resultDAO().getTopTen()
+        var results = db.resultDao().getTopTen()
         println(results.toString())
         binding.textView.text = results.toString()
 
