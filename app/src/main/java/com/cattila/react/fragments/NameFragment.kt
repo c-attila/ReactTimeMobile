@@ -10,28 +10,24 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.cattila.react.R
-import com.cattila.react.databinding.FragmentMenuBinding
+import com.cattila.react.databinding.FragmentNameBinding
 
-class MenuFragment : Fragment() {
+class NameFragment : Fragment() {
 
-    lateinit var binding: FragmentMenuBinding
+    lateinit var binding: FragmentNameBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_menu, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_name, container, false)
 
-        binding.menuButton1.setOnClickListener {
-            findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToNameFragment())
-        }
-
-        binding.menuButton2.setOnClickListener {
-            findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToResultsFragment())
+        binding.button.setOnClickListener {
+            findNavController().navigate(NameFragmentDirections.actionNameFragmentToGameFragment(binding.textInput.text.toString()))
         }
 
         return binding.root
     }
+
 }

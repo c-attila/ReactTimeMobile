@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [Result::class], version = 1)
+@Database(entities = [Result::class], version = 2)
 @TypeConverters(Converters::class)
 abstract class ResultDatabase : RoomDatabase() {
 
@@ -19,7 +19,7 @@ abstract class ResultDatabase : RoomDatabase() {
             if (instance == null) {
                 instance = Room.databaseBuilder(
                     context.applicationContext,
-                    ResultDatabase::class.java, "winner_database"
+                    ResultDatabase::class.java, "database"
                 ).build()
             }
             return instance

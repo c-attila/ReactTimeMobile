@@ -6,6 +6,7 @@ import org.threeten.bp.LocalDateTime
 
 @Entity(tableName = "result")
 data class Result(
+    var playerName: String?,
     var elapsed: Long,
     var date: LocalDateTime
 ) {

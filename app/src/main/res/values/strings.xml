@@ -9,4 +9,6 @@
     <string name="game_button2_string">Play</string>
     <string name="game_button1_description_string">Target</string>
     <string name="results_button1_string">Back to menu</string>
+    <string name="name_text_string">Enter your name:</string>
+    <string name="name_fragment_string">Go!</string>
 </resources>

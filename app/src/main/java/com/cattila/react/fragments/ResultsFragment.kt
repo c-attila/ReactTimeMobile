@@ -25,19 +25,21 @@ class ResultsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val db = Room.databaseBuilder(
+            activity!!.applicationContext,
+            ResultDatabase::class.java, "database"
+        ).allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_results, container, false)
 
         binding.resultsButton1.setOnClickListener {
             findNavController().navigate(ResultsFragmentDirections.actionResultsFragmentToMenuFragment())
         }
 
-        val db = Room.databaseBuilder(
-            activity!!.applicationContext,
-            ResultDatabase::class.java, "database"
-        ).allowMainThreadQueries()
-            .build()
-
         var results = db.resultDAO().getTopTen()
+        println(results.toString())
         binding.textView.text = results.toString()
 
         return binding.root

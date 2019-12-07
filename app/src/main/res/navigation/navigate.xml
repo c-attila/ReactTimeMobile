@@ -11,17 +11,21 @@
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
-            android:id="@+id/action_menuFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
-        <action
             android:id="@+id/action_menuFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_nameFragment"
+            app:destination="@id/nameFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.cattila.react.fragments.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.cattila.react.fragments.ResultsFragment"
@@ -30,5 +34,14 @@
         <action
             android:id="@+id/action_resultsFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.cattila.react.fragments.NameFragment"
+        android:label="fragment_name"
+        tools:layout="@layout/fragment_name" >
+        <action
+            android:id="@+id/action_nameFragment_to_gameFragment"
+            app:destination="@+id/gameFragment" />
     </fragment>
 </navigation>
