@@ -8,7 +8,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AndroidThreeTen.init(this);
+        AndroidThreeTen.init(this)
         setContentView(R.layout.activity_main)
     }
 }
