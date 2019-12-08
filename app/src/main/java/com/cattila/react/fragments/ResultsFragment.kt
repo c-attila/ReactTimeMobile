@@ -26,6 +26,7 @@ import com.cattila.react.data.Result
 class ResultsFragment : Fragment() {
 
     private lateinit var binding: FragmentResultsBinding
+    private lateinit var resultViewModel: ResultViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +43,7 @@ class ResultsFragment : Fragment() {
 
         resultViewModel = ViewModelProviders.of(this).get(ResultViewModel::class.java)
 
-        resultViewModel.getAllResults().observe(this, Observer<List<Result>> {
+        resultViewModel.getTopTenResults().observe(this, Observer<List<Result>> {
             adapter.submitList(it)
         })
 
@@ -92,15 +93,13 @@ class ResultsFragment : Fragment() {
 //        return binding.root
 //    }
 
-    companion object {
-        const val ADD_NOTE_REQUEST = 1
-        const val EDIT_NOTE_REQUEST = 2
-    }
+//    companion object {
+//        const val ADD_RESULT_REQUEST = 1
+//        const val EDIT_RESULT_REQUEST = 2
+//    }
 
-    private lateinit var resultViewModel: ResultViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
 
 //        buttonAddResult.setOnClickListener {
@@ -122,7 +121,7 @@ class ResultsFragment : Fragment() {
 //                startActivityForResult(intent, EDIT_NOTE_REQUEST)
 //            }
 //        })
-    }
+//    }
 
 //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 //        menuInflater.inflate(R.menu.main_menu, menu)

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cattila.react.R
 import com.cattila.react.data.Result
 import kotlinx.android.synthetic.main.result_item.view.*
+import org.threeten.bp.format.DateTimeFormatter
 
 class ResultAdapter : ListAdapter<Result, ResultAdapter.ResultHolder>(DIFF_CALLBACK) {
 
@@ -37,7 +38,7 @@ class ResultAdapter : ListAdapter<Result, ResultAdapter.ResultHolder>(DIFF_CALLB
         val currentResult: Result = getItem(position)
 
         holder.textViewTitle.text = currentResult.playerName
-        holder.textViewPriority.text = currentResult.date.toString()
+        holder.textViewPriority.text = currentResult.date.format(DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm"))
         holder.textViewDescription.text = currentResult.elapsed.toString()
     }
 

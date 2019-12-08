@@ -9,6 +9,7 @@ class ResultRepository(application: Application) {
     private var resultDao: ResultDao
 
     private var allResults: LiveData<List<Result>>
+    private var topTenResult: LiveData<List<Result>>
 
     init {
         val database: ResultDatabase = ResultDatabase.getInstance(
@@ -16,6 +17,7 @@ class ResultRepository(application: Application) {
         )!!
         resultDao = database.resultDao()
         allResults = resultDao.getAllResults()
+        topTenResult = resultDao.getTopTen()
     }
 
     fun insert(result: Result) {
@@ -39,6 +41,10 @@ class ResultRepository(application: Application) {
 
     fun getAllResults(): LiveData<List<Result>> {
         return allResults
+    }
+
+    fun getTopTenResults(): LiveData<List<Result>> {
+        return topTenResult
     }
 
     companion object {

@@ -21,6 +21,6 @@ interface ResultDao {
     @Query("SELECT * FROM result")
     fun getAllResults(): LiveData<List<Result>>
 
-    @Query("SELECT * FROM result ORDER BY elapsed DESC LIMIT 10")
+    @Query("SELECT * FROM result ORDER BY elapsed ASC LIMIT 10")
     fun getTopTen(): LiveData<List<Result>>
 }

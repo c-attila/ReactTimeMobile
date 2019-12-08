@@ -10,6 +10,7 @@ class ResultViewModel(application: Application) : AndroidViewModel(application) 
     private var repository: ResultRepository =
         ResultRepository(application)
     private var allResults: LiveData<List<Result>> = repository.getAllResults()
+    private var topTenResults: LiveData<List<Result>> = repository.getTopTenResults()
 
     fun insert(result: Result) {
         repository.insert(result)
@@ -29,5 +30,9 @@ class ResultViewModel(application: Application) : AndroidViewModel(application) 
 
     fun getAllResults(): LiveData<List<Result>> {
         return allResults
+    }
+
+    fun getTopTenResults(): LiveData<List<Result>> {
+        return topTenResults
     }
 }
