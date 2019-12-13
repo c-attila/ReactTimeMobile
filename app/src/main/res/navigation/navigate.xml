@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_menuFragment_to_nameFragment"
             app:destination="@id/nameFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -44,4 +47,9 @@
             android:id="@+id/action_nameFragment_to_gameFragment"
             app:destination="@+id/gameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.cattila.react.fragments.OverviewFragment"
+        android:label="fragment_overview"
+        tools:layout="@layout/fragment_overview" />
 </navigation>
